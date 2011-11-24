@@ -1,0 +1,59 @@
+<h1>jQuery Basics</h1>
+<br/>
+<h2>Step 1:</h2>
+<pre>
+The best place to start is at the beginning. First your HTML page will need a reference either to the online
+copy of jQuery or to a downloaded version. Here is an example of a reference to the online version:
+</pre>
+<pre class="brush: html">
+	&lt;script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"&gt;&lt;/script&gt;
+</pre>
+<br/>
+<h2>Step 2:</h2>
+<pre>
+Once you've included the jQuery script into your page you can access the framework by calling the
+jQuery variable also known as the $ variable.
+($ is just an alias for jQuery which I discuss in the No Conflict tutorial).
+
+The recommended place to start using jQuery is on the document ready. When the document is ready the
+DOM (Document Object Model), will have been loaded even though the graphics may still be loading. The
+code to plug in to the document ready is:
+</pre>
+<pre class="brush: html">
+	&lt;script type="text/javascript"&gt;
+		$(document).ready(function() {
+			//do stuff here
+		});
+	&lt;/script&gt;
+</pre>
+<pre>
+So, what does this all mean? The $() is a selector. In this case we are selecting the DOM document itself.
+Next, we are saying, once the document is ready execute any commands in supplied the anonymous function.
+
+For Example, click the button:
+</pre>
+<div id="jQBasicButton" style="margin:1em;">Click Me!</div><br/>
+<pre>
+The code to do this is:
+</pre>
+<pre class="brush: html">
+	&lt;script type="text/javascript"&gt;
+		$(document).ready(function() {
+			$("#myButton").click(function() {
+				alert("Hello World!");
+			});
+		});
+	&lt;/script&gt;
+	...
+	&lt;body&gt;
+		&lt;input id="myButton" type="button" value="Click Me!"/&gt;
+	&lt;/body&gt;
+</pre>
+<pre>
+So, once the document is ready we add a "click" event handler to the selected button using the CSS
+# selector. (More on that in the next tutorial on Selectors.)
+
+
+
+</pre>
+
