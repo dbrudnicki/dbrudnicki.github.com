@@ -25,10 +25,10 @@ $(document).ready(function() {
 				subMenu.parent().addClass("ui-corner-all");
 			});
 			
-			subMenu.slideDown();
+			subMenu.slideDown(125);
 		}, function() {
 			var self = this;
-			$("ul", this).slideUp(function() {
+			$("ul", this).slideUp(125, function() {
 				$(self).addClass("ui-corner-all");
 			});
 		});
