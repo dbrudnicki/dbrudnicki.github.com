@@ -1,8 +1,10 @@
 yepnope([
   //load styles
+  {load: "css/popup.css"},
   {load: "css/shCore.css"},
   {load: "css/shThemeEclipse.css"},
   //load scripts  
+  {load: "js/popup.js"},
   {load: "js/shCore.js"},
   {load: "js/shBrushCss.js"},
   {load: "js/shBrushJava.js"},

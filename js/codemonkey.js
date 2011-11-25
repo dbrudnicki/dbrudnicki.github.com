@@ -1,7 +1,9 @@
 $(document).ready(function() {
+	/*
 	$(document).bind("contextmenu", function(event) {
 		event.preventDefault();
 	});
+	*/
 	
 	$("#header").load("pages/menu.html", function() {
 		$(".menu li").addClass("ui-corner-all");
@@ -55,7 +57,7 @@ $(document).ready(function() {
 	function applyCode() {
 		$("#jQBasicButton").myButton({
 			click: function() {
-				alert("Hello World!");
+				$("#content").popup({message: "Hello World!"});
 			}
 		});
 	};
