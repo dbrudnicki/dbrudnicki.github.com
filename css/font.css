@@ -2,3 +2,8 @@
   font-family: "siteFont";
   src: url("ClienR.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "siteFontBold";
+  src: url("ClienB.ttf") format("truetype");
+}

@@ -13,7 +13,9 @@ html, body {
 	height: 100%
 }
 
-ol {
+b {font-family: siteFontBold, Arial, sans-serif;s}
+
+ol, #content ul {
 	padding: 1em 1em 1em 2em;
 }
 
