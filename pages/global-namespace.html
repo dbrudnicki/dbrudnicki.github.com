@@ -1,0 +1,57 @@
+<h3>Global Namespace and the VAR keyword</h3>
+<p>Pretty much everyone agrees that polluting the Global Namespace is a bad practice. This doesn't mean we can't put a bunch of variables and functions in the Global Namespace. Rather, it means we should try to encapsulate as much as we can in our functions and objects. However, the fundamental question remains: why is polluting the Global Namespace bad?</p>
+<p>Let's imagine we include a library from someone with the following code:</p>		
+<pre class="brush: js">
+function doStuff() {
+    ...
+    status = false;
+    ...
+};
+</pre>
+<p>Now, we want to use that function in our code as such:</p>
+<pre class="brush: js">
+function myFunc() {
+    status = true;
+    doStuff();
+    if(status) {
+        ...
+    }
+};
+</pre>
+<p>The problem we encounter is that because neither 'status' variable was decalred with VAR JavaScript secretly declares them both in the Global Namespace. This allows the doStuff() method to overwrite the 'status' such that the IF statement will never execute because doStuff() is setting the 'status' to false on us.</p>
+<p>In short, the code effectively looks like the following to the JavaScript interpreter:</p>
+<pre class="brush: js">
+var status;
+
+function doStuff() {
+    ...
+    status = false;
+    ...
+};
+
+function myFunc() {
+    status = true;
+    doStuff(); // our status just got set to false
+    if(status) {
+        ...
+    }
+};
+</pre>
+<p>Instead, to avoid conflicts, our code should be written as follows:</p>
+<pre class="brush: js">
+function doStuff() {
+    ...
+    var status = false;
+    ...
+};
+
+function myFunc() {
+    var status = true;
+    doStuff();
+    if(status) {
+        ...
+    }
+};
+</pre>			
+<p>By using the VAR keyword we force the variable to be scoped to the function in which we are using it rather than allowing the variable to bubble up to the Global Namespace where it can be overwritten.</p>
+<p>&nbsp;</p>
