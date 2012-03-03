@@ -1,10 +1,8 @@
 $(document).ready(function() {
 	//disable the context menu
-	/*
 	$(document).bind("contextmenu", function(event) {
 		event.preventDefault();
 	});
-	*/
 	
 	//load links and main content
 	$("#nav-list").load("pages/links.html", function() {
