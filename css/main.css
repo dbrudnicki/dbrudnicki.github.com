@@ -12,6 +12,10 @@ html, body {
 	bottom: 0;
 }
 
+h2 {
+	margin-bottom: 1em;
+}
+
 .syntaxhighlighter {
 	width: 75% !important;
 	border: 1px solid lightgrey !important;
