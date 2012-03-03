@@ -1,5 +1,6 @@
 <h2>Global Namespace and the VAR keyword</h2>
 <p>Pretty much everyone agrees that polluting the Global Namespace is a bad practice. This doesn't mean we can't put a bunch of variables and functions in the Global Namespace. Rather, it means we should try to encapsulate as much as we can in our functions and objects. However, the fundamental question remains: why is polluting the Global Namespace bad?</p>
+<br/>
 <p>Let's imagine we include a library from someone with the following code:</p>		
 <pre class="brush: js">
 function doStuff() {
@@ -19,6 +20,7 @@ function myFunc() {
 };
 </pre>
 <p>The problem we encounter is that because neither 'status' variable was decalred with VAR JavaScript secretly declares them both in the Global Namespace. This allows the doStuff() method to overwrite the 'status' such that the IF statement will never execute because doStuff() is setting the 'status' to false on us.</p>
+<br/>
 <p>In short, the code effectively looks like the following to the JavaScript interpreter:</p>
 <pre class="brush: js">
 var status;

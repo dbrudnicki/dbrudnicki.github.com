@@ -1,5 +1,5 @@
 <h2>Closures</h2>
-<p>In JavaScript the FUNCTION keyword is overloaded to indicate either a function or an object depending on its usage. This means that some aspects of objects such as the ability to create inner functions is allowed for standard functions; thus the following code is legitimate in JavaScript:</p>	
+<p>In JavaScript the FUNCTION keyword is overloaded to indicate either a function or an object depending on its usage. This means that some aspects of objects such as the ability to create inner functions are allowed for standard functions; thus the following code is legitimate in JavaScript:</p>	
 <pre class="brush: js">
 function outerFunc() {
     function innerFunc() {
@@ -10,10 +10,9 @@ function outerFunc() {
 };
 </pre>
 <p>Because functions can be wrapped inside other functions they become scoped to the function they are wrapped in. This means that any variables or other functions within the same scope are made available to the wrapped function.</p>
+<br/>
 <p>In the following example a function is called that takes a parameter which is then modified by a variable internal to the function and finally the variable is returned as the result of an inner function:</p>
 <pre class="brush: js">
-alert(outerFunc("Hi")); //This will result in an alert that says: Message: Hi	
-	
 function outerFunc(input) {
 	var msg = "Message: " + input;
 	
@@ -23,8 +22,11 @@ function outerFunc(input) {
 	
 	return innerFunc();
 };
+
+alert(outerFunc("Hi")); //The result is an alert that says: Message: Hi	
 </pre>
 <p>This seems simple enough, but the true power of Closures is in the fact that the inner function can be returned, saved as a variable and retain access to the scope in which it was created.</p>
+<br/>
 <p>In the following example a function is supplied an initial 'label' parameter and the returned function is stored in the 'msg' variable. In this case the 'label' will remain the same every time the msg function gets executed even though the 'value' is changed:</p>
 <pre class="brush: js">
 function outerFunc(label) {

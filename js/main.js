@@ -15,16 +15,4 @@ $(document).ready(function() {
 		});
 	});
 	$("#content").load("pages/main.html");
-	
-	var msg = outerFunc("The message is");
-	console.log(msg("Hello"));
-	console.log(msg("World"));
 });
-
-function outerFunc(label) {
-	function innerFunc(value) {
-		return label + ": "+ value;
-	};
-	
-	return innerFunc;
-};
